@@ -1,2 +1,34 @@
+#大小写敏感
+#数据值前边必须有空格，作为分隔符
+#使用缩进表示层级关系
+#缩进时不允许使用Tab键，只允许使用空格
+#缩进的空格数目不重要，只要相同层级的元素左侧对其即可
+# #表示注释，从这个字符一直到行尾，都会被解析器忽略
+
 server:
   port: 8082
+  address: 127.0.0.1
+
+name: zhangsan
+
+#对象格式
+person:
+  name: lisi
+  age: 20
+#对象格式行内写法
+person1: {name: lisi,age: 20}
+
+#参数引用
+person2:
+  name: ${name}
+
+#数组格式(使用-表示数组的每个元素)
+address:
+  - beijing
+  - shanghai
+#数组格式的行内写法
+address1: [beijing,shanghai]
+
+#纯量
+msg1: 'hello \n world' #单引号不会识别转义字符，按原样输出
+msg2: "hello \n world" #双引号会识别转义字符
