@@ -1,2 +1,2 @@
-# Spring-boot
-黑马程序员自学Spring-boot入门级
+# IDEA
+所有有关的idea代码都在其他分支里面
