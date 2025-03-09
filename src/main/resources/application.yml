@@ -32,3 +32,53 @@ address1: [beijing,shanghai]
 #纯量
 msg1: 'hello \n world' #单引号不会识别转义字符，按原样输出
 msg2: "hello \n world" #双引号会识别转义字符
+
+#yml多文档方式：用---分隔不同配置
+---
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+
+---
+server:
+  port: 8081
+
+spring:
+  config:
+    activate:
+      on-profile: pro
+---
+
+---
+server:
+  port: 8082
+
+spring:
+  config:
+    activate:
+      on-profile: test
+---
+
+---
+#激活指定配置文件
+spring:
+  profiles:
+    active: test
+#profile激活方式：1.配置文件：在配置文件中配置：spring.profiles.active=dev;
+#               2.虚拟机参数:在VM options指定：-Dspring.profiles.active=dev;
+#               3.命令行参数：java -jar xxx.jar --spring.profiles.active=dev;3.命令行参数:java-jar xxx.jar --spring.profiles.active=dev
+---
+
+---
+#redis配置
+spring:
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+---
