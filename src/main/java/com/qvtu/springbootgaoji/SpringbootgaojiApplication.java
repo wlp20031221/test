@@ -17,7 +17,10 @@ public class SpringbootgaojiApplication {
 //        Object redisTemplate = context.getBean("redisTemplate");
 //        System.out.println(redisTemplate);
 
-        Object user = context.getBean("user");
+//        Object user = context.getBean("user");
+//        System.out.println(user);
+
+        Object user = context.getBean("user2");
         System.out.println(user);
 
     }
